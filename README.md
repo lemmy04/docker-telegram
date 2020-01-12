@@ -17,7 +17,7 @@ docker run --rm -it --name telegram \
        -v "/home/$(whoami)/.Xauthority:/home/user/.Xauthority" \
        -v /etc/localtime:/etc/localtime:ro \
        -v <Your_storage_dir>/.TelegramDesktop:/home/user/.local/share/TelegramDesktop/ \
-       xorilog/telegram
+       lemmy04/telegram
 ```
 ### Mac Os
 > Requires xquartz (`brew cask install xquartz` then reboot your computer & check in preferences>Security : Authenticate & Allow connections checkboxes)
@@ -27,7 +27,7 @@ docker run --rm -it --name telegram \
        -e DISPLAY=$(xhost + $(hostname) > /dev/null; echo $IP):0 \
        -v /etc/localtime:/etc/localtime:ro \
        -v <Your_storage_dir>/.TelegramDesktop:/home/user/.local/share/TelegramDesktop/ \
-       xorilog/telegram
+       lemmy04/telegram
 ```
 
 ## systemd

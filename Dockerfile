@@ -9,8 +9,8 @@ RUN apt-get update && apt-get install -y \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Telegram Version 1.8.8
-RUN wget https://updates.tdesktop.com/tlinux/tsetup.1.8.15.tar.xz -O /tmp/telegram.tar.xz \
+# Telegram Version 1.9.3
+RUN wget https://updates.tdesktop.com/tlinux/tsetup.1.9.3.tar.xz -O /tmp/telegram.tar.xz \
     && cd /tmp/ \
     && tar xvfJ /tmp/telegram.tar.xz \
     && mv /tmp/Telegram/Telegram /usr/bin/Telegram \
@@ -18,7 +18,7 @@ RUN wget https://updates.tdesktop.com/tlinux/tsetup.1.8.15.tar.xz -O /tmp/telegr
 
 # Base docker image
 FROM debian:stretch
-LABEL maintainer "Christophe Boucharlat <christophe.boucharlat@gmail.com>"
+LABEL maintainer "Mathias Homann <Mathias.Homann@openSUSE.org>"
 
 # Make a user
 ENV HOME /home/user
