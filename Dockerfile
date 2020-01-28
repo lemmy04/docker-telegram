@@ -3,6 +3,8 @@ FROM debian:jessie-slim as downloader
 
 RUN apt-get update && apt-get install -y \
     apt-utils \
+    libpulse0 \
+    pulseaudio \
     software-properties-common \
     wget \
     --no-install-recommends && \
