@@ -19,7 +19,7 @@ RUN wget https://updates.tdesktop.com/tlinux/tsetup.1.9.14.tar.xz -O /tmp/telegr
     && rm -rf /tmp/{telegram.tar.xz,Telegram}
 
 # Base docker image
-FROM debian:stretch
+FROM debian:buster
 LABEL maintainer "Mathias Homann <Mathias.Homann@openSUSE.org>"
 
 # Make a user
@@ -39,6 +39,7 @@ RUN apt-get update && apt-get install -y \
     libx11-xcb1 \
     libasound2 \
     gconf2 \
+    libdrm-common \
     --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
