@@ -7,5 +7,7 @@ sed -i 's/\(tsetup.\).*\(.tar.xz -O\)/\1'"${version}"'\2/' Dockerfile
 git commit -am "Telegram version ${version}"
 git tag -am "Telegram version ${version}" "${version}"
 git push --follow-tags
-docker build -t lemmy04/telegram:${version} .
+docker build -t lemmy04/telegram:${version} -t lemmy04/telegram:latest .
 docker push lemmy04/telegram:${version}
+docker push lemmy04/telegram:latest
+
